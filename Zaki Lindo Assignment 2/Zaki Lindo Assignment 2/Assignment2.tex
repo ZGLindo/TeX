@@ -1,0 +1,131 @@
+\documentclass[11pt]{amsart}
+\setlength{\parindent}{5mm}
+\pagestyle{empty}
+\addtolength{\topmargin}{-15mm}
+\addtolength{\oddsidemargin}{-20mm}
+\addtolength{\evensidemargin}{-20mm}
+\setlength{\textheight}{230mm}
+\setlength{\textwidth}{175mm}
+
+\begin{document}
+
+
+ {\bf Zaki Glenroy Lindo, Assignment 2}
+ 
+ \vskip .2in
+
+\noindent Assignment 2: Due Monday September 11, 2017, no later than 8pm.\\
+
+$p. 37-39$ \# 16, 17, 21, 27 (Do not use part $(iii)$ of Theorem 1.23 or any later theorems in your proof, since you are proving Theorem 1.23 part $(iii)$),  36\\
+\\
+\\
+\\
+\#16. Determine if the operation defined in Example 1.5 on the set $\{ John, Sue, Henry, Pam\}$ is commutative, has an identity, and if each element has an inverse.\\ (I included the table below for an example on how to create a Cayley Table in TeX.)\\
+
+\begin{tabular}{c | c  c  c  c }
+$\ast$ & John & Sue & Henry & Pam\\
+\hline
+John & John & John & John & John \\
+
+Sue & John & Sue & Pam & Henry \\
+
+Pam & John & Pam & Pam & Sue \\
+
+Henry & John & Henry & Sue & Henry\\
+\end{tabular}
+\\
+\\
+\\To talk about the set above easier, let $NAMES=\{ John, Sue, Henry, Pam\}$.\\
+\\(Commutative) Observe $Pam\ast Henry$. 
+\\
+\\For this, $Pam\ast Henry=Pam$. However, $Henry\ast Pam=Henry$. As $Pam\neq Henry$, $NAMES$ is not commutative under the operation $\ast$.
+\\
+\\(Identity) Observe $Sue\in NAMES$.
+\\
+\\Looking at the Cayley Table, we can see that for any $name\in Names$, $Sue\ast name=name$. Also, $name\ast Sue=name$. With this, we know that Sue is the identity of this set on our operation $\ast$. 
+\\
+\\(Inverse) Observe $John\in NAMES$.
+\\
+\\Looking at the Cayley Table, we can see that for all $name\in NAMES$, $John\ast name={John}$. This tells us that there does not exist $name\in NAMES$ such that $John\ast name=Sue$(The identity element of the set). Therefore $John$ does not have an inverse.
+\\
+\\For the inverse of each element aside from $John$, $name^{-1}=name$. That is, $Sue^{-1}=Sue$, $Pam^{-1}=Pam$, and $Henry^{-1}=Henry$.
+\vskip 3in
+\#17.  Write out the Cayley table for the group $(\mathbb{Z}_6, +_6)$ and identify the inverse of each element.\\
+\vskip 0.1in
+\begin{tabular}{c | c  c  c  c  c  c }
+	$+_{6}$ & 0 & 1 & 2 & 3 & 4 & 5 \\
+	\hline
+		0 & 0 & 1 & 2 & 3 & 4 & 5 \\
+	
+		1 & 1 & 2 & 3 & 4 & 5 & 0 \\
+	
+		2 & 2 & 3 & 4 & 5 & 0 & 1 \\
+	
+		3 & 3 & 4 & 5 & 0 & 1 & 2 \\
+		
+		4 & 4 & 5 & 0 & 1 & 2 & 3 \\
+		
+		5 & 5 & 0 & 1 & 2 & 3 & 4 \\
+\end{tabular}
+\\
+\\
+\\$0^{-1}=0$\\$1^{-1}=5$\\$2^{-1}=4$\\$3^{-1}=3$\\$4^{-1}=2$\\$5^{-1}=1$ 
+
+\vskip 0.5in
+
+
+
+\#21. We can even create groups with games! Consider four cups placed in a square pattern on a table. If we have a penny in one of the cups there are four ways we can move it to another cup: \emph{Horizontally, Vertically, Diagonally,} or \emph{Stay where it is}. We label them as $H, V, D, S$. To define the operation, consider two movements in a row, i.e. $x \ast y$ means first move the penny as $x$ tells us to, then after that move the penny as $y$ instructs. For example $H \ast V = D$ since if we first move it horizontally and then vertically altogether we have moved it diagonally. Create the Cayley table for this group, identify the identity, and the inverse of each element.\\
+\vskip 0.1in
+\begin{tabular}{c | c  c  c  c }
+	$\ast$ & H & V & D & S\\
+	\hline
+	H & S & D & V & H \\
+	
+	V & D & S & H & V \\
+	
+	D & V & H & S & D \\
+	
+	S & H & V & D & S\\
+\end{tabular}
+\\
+\\
+\\(Identity) The identity in this group is S.
+\\
+\\(Inverse) The inverse for each element is itself.\\ \\$H^{-1}=H\\V^{-1}=V\\D^{-1}=D\\S^{-1}=S$
+\vskip 0.5in
+
+
+
+
+\#27. Assume G is a group and $a \in G$. Prove by PMI (Theorem 0.3) that for every $n \in \mathbb{N}$, $(a^n)^{-1} = a^{-n}$. (Do not use part $(iii)$ of Theorem 1.23 or any later theorems in your proof, since you are proving Theorem 1.23 part (iii).)\\
+
+Let G be a group and $a\in G$.
+\\
+\\Proof: Let $n\in \mathbb{N}$. We want to show that $(a^{n})^{-1}=a^{-n}$. 
+\\
+\\(Base Case): Let $n=1$. As $n=1$, $(a^{n})^{-1}=(a^{1})^{-1}=a^{1*(-1)}=a^{-1}=a^{-n}$. Thus, for $n=1$, $(a^{n})^{-1}=a^{-n}$.\\
+\\(Inductive Hypothesis): Let $n\in \mathbb{N}$. Assume that for $n$, $(a^{n})^{-1}=a^{-n}$. \\
+\\(Inductive Step): Let $n+1\in \mathbb{N}$. Now, we want to show that $(a^{n+1})^{-1}=a^{-(n+1)}$. By our exponent rules, $(a^{n+1})^{-1}=(a^{n}a^{1})^{-1}=(a^{n})^{-1}(a^{1})^{-1}$. By our base case, we know that $(a^{1})^{-1} = a^{-1}$. By our hypothesis, $(a^{n})^{-1}=a^{-n}$. So now we have $(a^{n})^{-1}(a^{n})^{-1}(a^{1})^{-1}=a^{-n}a^{-1}$. By our exponent rules, $a^{-n}a^{-1}=a^{-n+(-1)}=a^{-(n+1)}$. As we now have $(a^{n+1})^{-1}=a^{-(n+1)}$, by PMI, for every $n \in \mathbb{N}$, $(a^n)^{-1} = a^{-n}$.
+\vskip 0.5in
+
+\#36. Suppose G is a group and $a \in G$. Prove: If $ord(a) = 6$ then $ord(a^5) = 6$. Do any other elements $a^2$, $a^3$, or $a^4$ have order 6? Explain.\\
+\\Let G be a group and $a\in G$.
+\\
+\\Proof: Assume $ord(a)=6$. As $ord(a)=6$, $a^{6}=e_{G}$ and for $k\in \mathbb{Z}$, if $0<k<6$ then $a^{k}\neq e_{G}$. We want to show that $ord(a^{5})=6$. By our exponent rules, we know that $(a^{6})^{5}=a^{6}a^{6}a^{6}a^{6}a^{6}$. As $ord(a)=6$, $a^{6}a^{6}a^{6}a^{6}a^{6}=e_{G}e_{G}e_{G}e_{G}e_{G}=e_{G}$. We can rearrange the exponents of $(a^{6})^{5}$ as multiplication is commutative. So now we have $(a^{5})^{6}=e_{G}$. Not only do we need to show this, we need to show that $6$ is the smallest positive integer n for which $(a^{5})^{6}=e_{G}$. So, we need to show that $(a^{5})^{1}\neq e_{G}$, $(a^{5})^{2}\neq e_{G}$, $(a^{5})^{3}\neq e_{G}$, $(a^{5})^{4}\neq e_{G}$, $(a^{5})^{5}\neq e_{G}$. 
+\\$(a^{5})^{1}= a^{5}.$ As $ord(a)=6$ , $(a^{5})^{1}\neq e_{G}$.
+\\$(a^{5})^{2}= a^{6}a^{4}=e_{G}a^{4}=a{4}$. As $ord(a)=6$ , $(a^{4})\neq e_{G}$.
+\\$(a^{5})^{3}=a^{6}a^{6}a^{3}=e_{G}e_{G}a^{3}=a^{3}$. As $ord(a)=6$, $(a^{3})\neq e_{G}$
+\\$(a^{5})^{4}=a^{6}a^{6}a^{6}a^{2}=e_{G}e_{G}e_{G}a^{2}=a^{2}$. As $ord(a)=6$, $(a^{2})\neq e_{G}$
+\\$(a^{5})^{5}=a^{6}a^{6}a^{6}a^{6}a^{5}=e_{G}e_{G}e_{G}e_{G}a^{5}=a^{5}$. As $ord(a)=6$, $(a^{2})\neq e_{G}$.
+Thus, for $0<k<4$, $(a^{5})^{k}\neq e_{G}$. Thus, with this and $(a^{5})^{6}=e_{G}$, $ord(a^{5})=6$.
+\\
+\\
+\\$a^{2}$: no, because $(a^{2})^{3}=a^{6}=e_{G}$.
+\\$a^{3}$: no, because $(a^{3})^{2}=a^{6}=e_{G}$.
+\\$a^{4}$: no, because $(a^{4})^{3}=a^{6}a^{6}=e_{G}e_{G}=e_{G}$.
+\vskip .5in
+
+
+
+\end{document}
